@@ -1,0 +1,30 @@
+.track-container {
+  max-width: 120rem;
+  margin: auto;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.track {
+  display: flex;
+  gap: 3rem;
+}
+
+.track a {
+  font-size: 1.5rem;
+}
+
+.section {
+  max-width: 120rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: var(--clr-primary);
+  text-align: center;
+}

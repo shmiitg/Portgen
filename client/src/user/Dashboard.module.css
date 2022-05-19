@@ -1,0 +1,16 @@
+.dashboard-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+.portfolios {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.portfolio-box {
+  display: flex;
+  gap: 1rem;
+}

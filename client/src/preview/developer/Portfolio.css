@@ -1,0 +1,12 @@
+.preview-container {
+    max-width: 120rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.portfolio {
+    background: #fff;
+}

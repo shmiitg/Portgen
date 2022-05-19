@@ -1,0 +1,133 @@
+.form-container {
+  margin: 3rem auto 0;
+  width: 38rem;
+  background: #f8f8f8;
+  border: 3px solid #fff;
+  box-shadow: -5px -5px 10px #fff, 5px 5px 10px #e5e0e0f5;
+  border-radius: 18px;
+}
+
+.form-container h3 {
+  color: var(--clr-primary);
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 8rem;
+}
+
+.social-box {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  font-size: 2.4rem;
+  width: 5.4rem;
+  height: 5.4rem;
+  background: #f8f8f8;
+  box-shadow: -5px -5px 10px #fff, 5px 5px 10px #e6e1e1f5;
+  text-align: center;
+  line-height: 6rem;
+  border-radius: 18px;
+  margin: 0 1.4rem;
+  align-items: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  box-shadow: inset -2px -2px 6px #f9f9f9, inset 2px 2px 6px #d1d1d1;
+}
+
+.social-box a {
+  font-size: 2.4rem;
+  width: 5.4rem;
+  height: 5.4rem;
+  background: #f8f8f8;
+  box-shadow: -5px -5px 10px #fff, 5px 5px 10px #e6e1e1f5;
+  text-align: center;
+  line-height: 6rem;
+  border-radius: 18px;
+  margin: 0 1.4rem;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.social-box a:hover {
+  box-shadow: inset -2px -2px 6px #f9f9f9, inset 2px 2px 6px #d1d1d1;
+}
+
+.social-box svg {
+  text-align: center;
+  align-items: center;
+  color: #150098;
+}
+
+.form-container p {
+  align-items: center;
+  text-align: center;
+  margin: 2.25rem 0;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #616161;
+}
+
+.form-inputs {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.form-fields {
+  margin: 2rem 0;
+}
+
+.form-fields input {
+  width: 80%;
+  height: 4.5rem;
+  text-align: center;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 5px 14px;
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+  box-shadow: inset -2px -2px 6px #f9f9f9, inset 2px 2px 6px #d1d1d1;
+}
+
+.btn {
+  width: 55%;
+  margin-top: 1rem;
+  background: var(--clr-primary);
+  text-transform: capitalize;
+  padding: 14px 0;
+  color: #f8f8f8;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  font-size: 1.5rem;
+  box-shadow: -2px -2px 6px #f9f9f9, 2px 2px 6px #d1d1d1;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  color: var(--clr-primary);
+  background: #f8f8f8;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.toggle a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--clr-primary);
+  font-size: 1.75rem;
+}
+
+.toggle a:hover {
+  color: #1d01d3;
+}
