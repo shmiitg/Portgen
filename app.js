@@ -3,6 +3,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const session = require("cookie-session");
 const passport = require("passport");
+const path = require("path");
 
 // database config
 require("./config/db");
@@ -42,6 +43,9 @@ const port = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV == "production") {
     app.use(express.static("client/build"));
+    app.get("/*", (req, res) => {
+        res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    });
 }
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
