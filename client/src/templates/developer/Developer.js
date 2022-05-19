@@ -31,9 +31,9 @@ const Developer = () => {
         const res = await fetch(`/api/portfolio/developer/${location}`);
         const data = await res.json();
         if (res.status === 200) {
-            if (data.education) setEducation(data.education);
-            if (data.project) setProject(data.project);
-            if (data.experience) setExperience(data.experience);
+            if (data.education.length) setEducation(data.education);
+            if (data.project.length) setProject(data.project);
+            if (data.experience.length) setExperience(data.experience);
         } else {
             navigate("/");
         }

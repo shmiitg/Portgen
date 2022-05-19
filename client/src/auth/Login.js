@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaGooglePlusG, FaGithub } from "react-icons/fa";
+import { FaGooglePlusG, FaGithub } from "react-icons/fa";
 import classes from "./Auth.module.css";
 
 const Login = () => {
@@ -32,48 +32,47 @@ const Login = () => {
     };
 
     return (
-        <div className={classes["form-container"]}>
-            <h3>Welcome Back</h3>
-            <div className={classes["social-box"]}>
-                <div className={classes["social-icon"]} onClick={googleAuth} to="/">
-                    <FaGooglePlusG />
+        <div className={classes["form-main-container"]}>
+            <div className={classes["form-container"]}>
+                <h3>Welcome Back</h3>
+                <div className={classes["social-box"]}>
+                    <div className={classes["social-icon"]} onClick={googleAuth} to="/">
+                        <FaGooglePlusG />
+                    </div>
+                    <div className={classes["social-icon"]} onClick={githubAuth} to="/">
+                        <FaGithub />
+                    </div>
                 </div>
-                <div className={classes["social-icon"]} onClick={githubAuth} to="/">
-                    <FaGithub />
+                <p>or Sign In with Email</p>
+                <div className={classes["form-inputs"]}>
+                    <div className={classes["form-fields"]}>
+                        <input
+                            onChange={handleInput}
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            value={user.email}
+                        />
+                    </div>
+                    <div className={classes["form-fields"]}>
+                        <input
+                            onChange={handleInput}
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            value={user.password}
+                        />
+                    </div>
+                    <div className={classes["form-fields"]}>
+                        <button className={classes["btn"]} onClick={formSubmit}>
+                            sign in
+                        </button>
+                    </div>
                 </div>
-                <Link to="/">
-                    <FaFacebook />
-                </Link>
+                <p className={classes["toggle"]}>
+                    Don't have account?<Link to="/register">Register</Link>
+                </p>
             </div>
-            <p>or Sign In with Email</p>
-            <div className={classes["form-inputs"]}>
-                <div className={classes["form-fields"]}>
-                    <input
-                        onChange={handleInput}
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={user.email}
-                    />
-                </div>
-                <div className={classes["form-fields"]}>
-                    <input
-                        onChange={handleInput}
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        value={user.password}
-                    />
-                </div>
-                <div className={classes["form-fields"]}>
-                    <button className={classes["btn"]} onClick={formSubmit}>
-                        sign in
-                    </button>
-                </div>
-            </div>
-            <p className={classes["toggle"]}>
-                Don't have account?<Link to="/register">Register</Link>
-            </p>
         </div>
     );
 };

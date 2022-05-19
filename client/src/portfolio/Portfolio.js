@@ -10,12 +10,6 @@ const Portfolio = () => {
             link: "/portfolio/developer",
         },
         {
-            type: "Research",
-            content:
-                "Showoff your research and stand a chance to become the best scientist in the world",
-            link: "/portfolio/developer",
-        },
-        {
             type: "Designer",
             content: "Showcase your skills and projects",
             link: "/portfolio/developer",

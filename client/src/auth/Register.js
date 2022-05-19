@@ -22,57 +22,56 @@ const Register = () => {
     };
 
     return (
-        <div className={classes["form-container"]}>
-            <h3>Create new account</h3>
-            <div className={classes["social-box"]}>
-                <Link to="/">
-                    <FaGooglePlusG />
-                </Link>
-                <Link to="/">
-                    <FaFacebook />
-                </Link>
-                <Link to="/">
-                    <FaGithub />
-                </Link>
+        <div className={classes["form-main-container"]}>
+            <div className={classes["form-container"]}>
+                <h3>Create new account</h3>
+                <div className={classes["social-box"]}>
+                    <div className={classes["social-icon"]}>
+                        <FaGooglePlusG />
+                    </div>
+                    <div className={classes["social-icon"]}>
+                        <FaGithub />
+                    </div>
+                </div>
+                <p>or Sign Up with Email</p>
+                <div className={classes["form-inputs"]}>
+                    <div className={classes["form-fields"]}>
+                        <input
+                            onChange={handleInput}
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            value={user.name}
+                        />
+                    </div>
+                    <div className={classes["form-fields"]}>
+                        <input
+                            onChange={handleInput}
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            value={user.email}
+                        />
+                    </div>
+                    <div className={classes["form-fields"]}>
+                        <input
+                            onChange={handleInput}
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            value={user.password}
+                        />
+                    </div>
+                    <div className={classes["form-fields"]}>
+                        <button className={classes["btn"]} onClick={formSubmit}>
+                            sign up
+                        </button>
+                    </div>
+                </div>
+                <p className={classes["toggle"]}>
+                    Already have account?<Link to="/login">Login</Link>
+                </p>
             </div>
-            <p>or Sign Up with Email</p>
-            <div className={classes["form-inputs"]}>
-                <div className={classes["form-fields"]}>
-                    <input
-                        onChange={handleInput}
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        value={user.name}
-                    />
-                </div>
-                <div className={classes["form-fields"]}>
-                    <input
-                        onChange={handleInput}
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={user.email}
-                    />
-                </div>
-                <div className={classes["form-fields"]}>
-                    <input
-                        onChange={handleInput}
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        value={user.password}
-                    />
-                </div>
-                <div className={classes["form-fields"]}>
-                    <button className={classes["btn"]} onClick={formSubmit}>
-                        sign up
-                    </button>
-                </div>
-            </div>
-            <p className={classes["toggle"]}>
-                Already have account?<Link to="/login">Login</Link>
-            </p>
         </div>
     );
 };

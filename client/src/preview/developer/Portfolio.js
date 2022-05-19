@@ -27,12 +27,6 @@ const Portfolio = () => {
         }
     };
     const exportPdf = () => {
-        // html2canvas(document.querySelector("#portfolio")).then((canvas) => {
-        // const imgData = canvas.toDataURL("image/png");
-        // const pdf = new jsPDF(canvas);
-        // pdf.addImage(imgData, "PNG", 0, 0);
-        // pdf.save("download.pdf");
-        // });
         const pdfTable = document.querySelector("#portfolio");
         const html = htmlToPdfmake(pdfTable.innerHTML);
         const documentDefinition = { content: html };
