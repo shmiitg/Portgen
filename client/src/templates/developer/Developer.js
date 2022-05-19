@@ -43,20 +43,22 @@ const Developer = () => {
     }, []);
 
     return (
-        <div className="track-container">
-            <div className="track">
-                <div className="field">
+        <div className="template__container">
+            <div className="template__field__container">
+                <div className="template__field">
                     <Education education={education} setEducation={setEducation} />
                 </div>
-                <div className="field">
+                <div className="template__field">
                     <Project project={project} setProject={setProject} />
                 </div>
-                <div className="field">
+                <div className="template__field">
                     <Experience experience={experience} setExperience={setExperience} />
                 </div>
             </div>
-            <button onClick={handleSubmit}>Submit</button>
-            <Link to={`/portfolio/developer/preview/${location}`}>Preview</Link>
+            <div className="template__links">
+                <button onClick={handleSubmit}>Submit</button>
+                <Link to={`/portfolio/developer/preview/${location}`}>Preview</Link>
+            </div>
         </div>
     );
 };

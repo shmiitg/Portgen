@@ -1,6 +1,6 @@
 import React from "react";
 import "../Templates.css";
-import classes from "./Developer.module.css";
+import { FaTrash } from "react-icons/fa";
 
 const Experience = ({ experience, setExperience }) => {
     const handleChange = (i, e) => {
@@ -22,13 +22,13 @@ const Experience = ({ experience, setExperience }) => {
     };
 
     return (
-        <div className="section">
-            <h2 className="title">Work and Experience Details</h2>
-            <div className={classes["form-main"]}>
+        <div className="template__section">
+            <h2>Work and Experience</h2>
+            <div className="template__form__container">
                 {experience.map((element, index) => (
-                    <div className={classes["form-container"]} key={index}>
-                        <div className={classes["form-fields"]}>
-                            <div className={classes["form-title"]}>Company</div>
+                    <div className="template__form" key={index}>
+                        <div className="template__form__fields">
+                            <div className="template__form__title">Company</div>
                             <input
                                 required
                                 type="text"
@@ -37,8 +37,8 @@ const Experience = ({ experience, setExperience }) => {
                                 onChange={(e) => handleChange(index, e)}
                             />
                         </div>
-                        <div className={classes["form-fields"]}>
-                            <div className={classes["form-title"]}>Work Details</div>
+                        <div className="template__form__fields">
+                            <div className="template__form__title">Work Details</div>
                             <input
                                 required
                                 type="text"
@@ -50,21 +50,16 @@ const Experience = ({ experience, setExperience }) => {
                         {index ? (
                             <button
                                 type="button"
-                                className="remove"
+                                className="template__remove__button"
                                 onClick={() => removeFormFields(index)}
                             >
-                                Remove
+                                <FaTrash />
                             </button>
                         ) : null}
-                        <div className="period">
-                            <label htmlFor=""></label>
-                        </div>
                     </div>
                 ))}
-                <div className="button-section">
-                    <button className="button add" type="button" onClick={() => addFormFields()}>
-                        Add
-                    </button>
+                <div className="template__add__button">
+                    <button onClick={() => addFormFields()}>Add</button>
                 </div>
             </div>
         </div>

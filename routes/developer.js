@@ -23,8 +23,8 @@ router.post("/:slug", async (req, res) => {
         if (!developer) {
             return res.status(404).json({ error: "Not found" });
         }
-        const { education, project } = req.body;
-        const update = { education, project };
+        const { education, project, experience } = req.body;
+        const update = { education, project, experience };
         await developer.updateOne(update);
         res.status(200).json({ msg: "Updated successfully" });
     } catch (err) {
