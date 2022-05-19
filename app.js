@@ -26,14 +26,12 @@ app.use(passport.session());
 const passportInit = require("./config/passport");
 passportInit(passport);
 
-const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const googleAuthRouter = require("./routes/google-auth");
 const githubAuthRouter = require("./routes/github-auth");
 const userRouter = require("./routes/user");
 const developerRouter = require("./routes/developer");
 
-app.use("/api", indexRouter);
 app.use("/api", authRouter);
 app.use("/auth", googleAuthRouter);
 app.use("/auth", githubAuthRouter);

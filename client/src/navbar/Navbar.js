@@ -2,7 +2,6 @@ import React from "react";
 import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 import { FaModx, FaUserCircle } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
 import "./Navbar.css";

@@ -1,0 +1,47 @@
+.dashboard__container {
+    margin-top: 5rem;
+}
+
+.dashboard__portfolios {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    gap: 5px;
+    margin: 0 auto;
+}
+
+.dashboard__id {
+    min-width: 30rem;
+}
+
+.dashboard__type {
+    min-width: 10rem;
+}
+
+.dashboard__box {
+    display: flex;
+    gap: 2rem;
+    min-width: fit-content;
+    padding: 2rem;
+    color: #8e8e8e;
+    margin: 0 5rem;
+    border-radius: 5px;
+    letter-spacing: 0.35px;
+}
+
+.dashboard__heading {
+    font-weight: 500;
+    color: var(--clr-primary);
+}
+
+.dashboard__box:nth-child(2n) {
+    background: #fefefe;
+}
+
+.dashboard__edit,
+.dashboard__preview {
+    color: var(--clr-primary);
+    min-width: 8rem;
+}

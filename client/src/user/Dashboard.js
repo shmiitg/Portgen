@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import classes from "./Dashboard.module.css";
+import "./Dashboard.css";
 
 const Dashboard = () => {
-    const [loading, setLoading] = useState(true);
     const [ids, setIds] = useState([]);
     const [types, setTypes] = useState([]);
     const fetchUserInfo = async () => {
@@ -15,24 +14,31 @@ const Dashboard = () => {
         } else {
             window.alert(data.error);
         }
-        setLoading(false);
     };
     useEffect(() => {
         fetchUserInfo();
     }, []);
 
-    if (loading) return <></>;
     return (
-        <div className={classes["dashboard-container"]}>
-            <div className={classes["portfolios"]}>
+        <div className="dashboard__container">
+            <div className="dashboard__portfolios">
+                <div className="dashboard__box dashboard__heading">
+                    <div className="dashboard__id">Id</div>
+                    <div className="dashboard__type">Type</div>
+                </div>
                 {ids.map((id, index) => (
-                    <div key={index} className={classes["portfolio-box"]}>
-                        <div className="portfolio-id">{id}</div>
-                        <div className="portfolio-type">{types[index]}</div>
-                        <Link to={`/portfolio/developer/${id}`} className="portfolio-id">
+                    <div key={index} className="dashboard__box">
+                        <div className="dashboard__id">{id}</div>
+                        <div className="dashboard__type">{types[index]}</div>
+                        <Link to={`/portfolio/developer/${id}`} className="dashboard__edit">
                             Edit
                         </Link>
-                        <Link to={`/portfolio/developer/preview/${id}`}>Preview</Link>
+                        <Link
+                            to={`/portfolio/developer/preview/${id}`}
+                            className="dashboard__preview"
+                        >
+                            Preview
+                        </Link>
                     </div>
                 ))}
             </div>
