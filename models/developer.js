@@ -13,15 +13,15 @@ const developerSchema = new mongoose.Schema(
         },
         education: {
             type: Array,
-            default: [],
+            default: null,
         },
         experience: {
             type: Array,
-            default: [],
+            default: null,
         },
         project: {
             type: Array,
-            default: [],
+            default: null,
         },
     },
     {
