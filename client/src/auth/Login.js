@@ -25,7 +25,8 @@ const Login = () => {
     };
 
     const googleAuth = () => {
-        window.open("http://localhost:5000/auth/google", "_self");
+        // window.open("http://localhost:5000/auth/google", "_self");
+        window.open("https://shm-portgen.herokuapp.com/auth/google", "_self");
     };
     const githubAuth = () => {
         window.open("http://localhost:5000/auth/github", "_self");

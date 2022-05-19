@@ -1,8 +1,9 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const passport = require('passport');
+const passport = require("passport");
 
-const CLIENT_URL = "http://localhost:3000/";
+// const CLIENT_URL = "http://localhost:3000/";
+const CLIENT_URL = "https://shm-portgen.herokuapp.com/";
 
 router.get("/login/success", (req, res) => {
     try {
@@ -13,7 +14,7 @@ router.get("/login/success", (req, res) => {
     } catch (err) {
         res.status(500).json({ error: "Some error occured" });
     }
-})
+});
 
 router.get("/login/failed", (req, res) => {
     try {
@@ -21,12 +22,16 @@ router.get("/login/failed", (req, res) => {
     } catch (err) {
         res.status(500).json({ error: "Some error occured" });
     }
-})
+});
 
 router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
-router.get("/google/callback", passport.authenticate("google", {
-    successRedirect: CLIENT_URL,
-    failureRedirect: "/auth/login/failed"
-}))
+router.get(
+    "/google/callback",
+    passport.authenticate("google", {
+        successRedirect: CLIENT_URL,
+        failureRedirect: "/auth/login/failed",
+    })
+);
+
 module.exports = router;
