@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Table from "./Table";
 import "./Dashboard.css";
+import Loader from "./Loader";
+import empty from "../images/empty.svg";
 
 const Dashboard = () => {
+    const [loading, setLoading] = useState(1);
     const [ids, setIds] = useState([]);
     const [types, setTypes] = useState([]);
     const fetchUserInfo = async () => {
@@ -14,40 +18,28 @@ const Dashboard = () => {
         } else {
             window.alert(data.error);
         }
+        setLoading(0);
     };
     useEffect(() => {
         fetchUserInfo();
     }, []);
 
+    if (loading) return <Loader />;
     return (
         <div className="dashboard__container">
-            <div className="dashboard__portfolios">
-                <div className="dashboard__box dashboard__heading">
-                    <div className="dashboard__id">Id</div>
-                    <div className="dashboard__type">Type</div>
+            {ids.length ? (
+                <div className="dashboard__portfolios">
+                    <h3>Your Portfolios</h3>
+                    <hr />
+                    <Table ids={ids} types={types} />
                 </div>
-                {ids.length ? (
-                    <>
-                        {ids.map((id, index) => (
-                            <div key={index} className="dashboard__box">
-                                <div className="dashboard__id">{id}</div>
-                                <div className="dashboard__type">{types[index]}</div>
-                                <Link to={`/portfolio/developer/${id}`} className="dashboard__edit">
-                                    Edit
-                                </Link>
-                                <Link
-                                    to={`/portfolio/developer/preview/${id}`}
-                                    className="dashboard__preview"
-                                >
-                                    Preview
-                                </Link>
-                            </div>
-                        ))}
-                    </>
-                ) : (
-                    <div className="dashboard__empty">Create your first portfolio</div>
-                )}
-            </div>
+            ) : (
+                <div className="dashboard__empty">
+                    <img src={empty} alt="empty" />
+                    <h3>No portfolios</h3>
+                    <Link to="/portfolio">Start Creating</Link>
+                </div>
+            )}
         </div>
     );
 };

@@ -1,0 +1,45 @@
+.dashboard__table {
+    overflow-x: auto;
+}
+
+.dashboard__table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tbody::before {
+    content: "-";
+    display: block;
+    line-height: 1.6rem;
+    color: transparent;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    min-width: 15rem;
+    letter-spacing: 0.2px;
+}
+
+th {
+    border: 2px solid #5140c7;
+    background: #5140c7;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+th:nth-child(1) {
+    min-width: 23rem;
+}
+
+td {
+    color: #545454;
+    border: 1.25px solid #e9e8e8;
+    font-size: 1.5rem;
+}
+
+td a {
+    color: var(--clr-primary);
+}

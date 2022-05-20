@@ -117,10 +117,11 @@
 .template__links a,
 .template__links button {
     font-family: inherit;
-    width: 25rem;
+    width: 20rem;
     border: none;
     box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 10%), -4px 4px 6px #fff;
     padding: 10px;
+    padding-top: 9px;
     font-weight: 500;
     text-transform: uppercase;
     transition: all 0.1s ease;
