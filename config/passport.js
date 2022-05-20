@@ -72,8 +72,9 @@ module.exports = function (passport) {
             },
             function (accessToken, refreshToken, profile, done) {
                 process.nextTick(async function () {
+                    const email = `${profile.username}@github.com`;
                     try {
-                        let user = await User.findOne({ email: `${profile.username}@github.com` });
+                        let user = await User.findOne({ email: email });
                         if (user) {
                             return done(null, user, "Logged in successfully");
                         }
@@ -81,7 +82,7 @@ module.exports = function (passport) {
                         const hashedPassword = await bcrypt.hash(random, 10);
                         user = new User({
                             name: profile.displayName,
-                            email: profile.username,
+                            email: email,
                             password: hashedPassword,
                         });
                         await user.save();

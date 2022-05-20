@@ -36,10 +36,10 @@ const Login = () => {
             <div className={classes["form-container"]}>
                 <h3>Welcome Back</h3>
                 <div className={classes["social-box"]}>
-                    <div className={classes["social-icon"]} onClick={googleAuth} to="/">
+                    <div className={classes["social-icon"]} onClick={googleAuth}>
                         <FaGooglePlusG />
                     </div>
-                    <div className={classes["social-icon"]} onClick={githubAuth} to="/">
+                    <div className={classes["social-icon"]} onClick={githubAuth}>
                         <FaGithub />
                     </div>
                 </div>

@@ -24,15 +24,22 @@ const Register = () => {
         }
     };
 
+    const googleAuth = () => {
+        window.open("https://shm-portgen.herokuapp.com/auth/google", "_self");
+    };
+    const githubAuth = () => {
+        window.open("https://shm-portgen.herokuapp.com/auth/github", "_self");
+    };
+
     return (
         <div className={classes["form-main-container"]}>
             <div className={classes["form-container"]}>
                 <h3>Create new account</h3>
                 <div className={classes["social-box"]}>
-                    <div className={classes["social-icon"]}>
+                    <div className={classes["social-icon"]} onClick={googleAuth}>
                         <FaGooglePlusG />
                     </div>
-                    <div className={classes["social-icon"]}>
+                    <div className={classes["social-icon"]} onClick={githubAuth}>
                         <FaGithub />
                     </div>
                 </div>
