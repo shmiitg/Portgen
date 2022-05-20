@@ -7,6 +7,10 @@
     gap: 5rem;
 }
 
+.template__container {
+    padding: 0 3rem;
+}
+
 .template__field__container {
     display: flex;
     flex-direction: column;
@@ -67,7 +71,7 @@
     box-shadow: inset -1px -1px 5px #f9f9f9, inset 1px 1px 5px #d1d1d1;
     outline: none;
     font-weight: 500;
-    min-width: 20rem;
+    min-width: 25rem;
 }
 
 .template__add__button {
@@ -105,8 +109,9 @@
     margin: 8rem auto;
     max-width: 110rem;
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .template__links a,

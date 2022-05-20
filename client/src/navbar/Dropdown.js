@@ -41,7 +41,6 @@ const Dropdown = () => {
                     </ul>
                 </div>
             </div>
-            <div class="cursor" onClick={dotsToggle}></div>
         </>
     );
 };
