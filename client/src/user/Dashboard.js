@@ -26,21 +26,27 @@ const Dashboard = () => {
                     <div className="dashboard__id">Id</div>
                     <div className="dashboard__type">Type</div>
                 </div>
-                {ids.map((id, index) => (
-                    <div key={index} className="dashboard__box">
-                        <div className="dashboard__id">{id}</div>
-                        <div className="dashboard__type">{types[index]}</div>
-                        <Link to={`/portfolio/developer/${id}`} className="dashboard__edit">
-                            Edit
-                        </Link>
-                        <Link
-                            to={`/portfolio/developer/preview/${id}`}
-                            className="dashboard__preview"
-                        >
-                            Preview
-                        </Link>
-                    </div>
-                ))}
+                {ids.length ? (
+                    <>
+                        {ids.map((id, index) => (
+                            <div key={index} className="dashboard__box">
+                                <div className="dashboard__id">{id}</div>
+                                <div className="dashboard__type">{types[index]}</div>
+                                <Link to={`/portfolio/developer/${id}`} className="dashboard__edit">
+                                    Edit
+                                </Link>
+                                <Link
+                                    to={`/portfolio/developer/preview/${id}`}
+                                    className="dashboard__preview"
+                                >
+                                    Preview
+                                </Link>
+                            </div>
+                        ))}
+                    </>
+                ) : (
+                    <div className="dashboard__empty">Create your first portfolio</div>
+                )}
             </div>
         </div>
     );

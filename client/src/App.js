@@ -44,17 +44,20 @@ function App() {
                     />
                     <Route
                         path="/portfolio"
-                        element={userName ? <Portfolio /> : <Navigate to="/login" />}
+                        element={userName ? <Portfolio /> : <Navigate to="/" />}
                     />
                     <Route
                         path="/portfolio/developer/:slug"
-                        element={userName ? <Developer /> : <Navigate to="/login" />}
+                        element={userName ? <Developer /> : <Navigate to="/" />}
                     />
                     <Route
                         path="/portfolio/developer/preview/:slug"
-                        element={userName ? <DeveloperPortfolio /> : <Navigate to="/login" />}
+                        element={userName ? <DeveloperPortfolio /> : <Navigate to="/" />}
                     />
-                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route
+                        path="/dashboard"
+                        element={userName ? <Dashboard /> : <Navigate to="/" />}
+                    />
                     <Route path="*" element={<Error />} />
                 </Routes>
             </Router>
