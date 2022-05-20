@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
-import { FaModx, FaUserCircle } from "react-icons/fa";
-import { BiLogOut } from "react-icons/bi";
 import "./Navbar.css";
+import logo from "../images/logo.png";
 import Dropdown from "./Dropdown";
 
 const Navbar = () => {
@@ -13,7 +12,9 @@ const Navbar = () => {
         <div className="navbar">
             <div className="nav-left">
                 <div className="logo">
-                    <Link to="/">Portgen</Link>
+                    <Link to="/">
+                        <img src={logo} alt="logo" />
+                    </Link>
                 </div>
             </div>
             <div className="nav-right">

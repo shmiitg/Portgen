@@ -26,3 +26,7 @@
     font-weight: 500;
     color: var(--clr-primary);
 }
+
+.logo img {
+    width: 13rem;
+}
