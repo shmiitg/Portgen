@@ -25,7 +25,8 @@
     gap: 2rem;
     min-width: fit-content;
     padding: 2rem;
-    color: #8e8e8e;
+    /* color: #8e8e8e; */
+    color: #656565;
     margin: 0 5rem;
     border-radius: 5px;
     letter-spacing: 0.35px;

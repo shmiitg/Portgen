@@ -6,12 +6,12 @@ const Portfolio = () => {
     const cards = [
         {
             type: "Developer",
-            content: "Showcase your development skills and projects and get hired soon",
+            content: "Showcase your development skills and projects",
             link: "/portfolio/developer",
         },
         {
             type: "Designer",
-            content: "Showcase your skills and projects",
+            content: "Showcase your desigining skills and projects",
             link: "/portfolio/developer",
         },
     ];
