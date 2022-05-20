@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FaFacebook, FaGithub, FaGooglePlusG } from "react-icons/fa";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../context/UserContext";
+import { Link } from "react-router-dom";
+import { FaGooglePlusG, FaGithub } from "react-icons/fa";
 import classes from "./Auth.module.css";
 
 const Register = () => {
-    const navigate = useNavigate();
     const [user, setUser] = useState({ name: "", email: "", password: "" });
     const handleInput = (e) => setUser({ ...user, [e.target.name]: e.target.value });
+
+    const { setUserName } = useContext(UserContext);
+
     const formSubmit = async () => {
         const res = await fetch("/api/register", {
             method: "POST",
@@ -15,7 +18,7 @@ const Register = () => {
         });
         const data = await res.json();
         if (res.status === 200) {
-            navigate("/login");
+            setUserName(data.user.username);
         } else {
             window.alert(data.error);
         }

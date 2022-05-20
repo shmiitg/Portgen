@@ -30,7 +30,7 @@ router.post("/login", (req, res, next) => {
     }
 });
 
-router.post("/register", async (req, res) => {
+router.post("/register", async (req, res, next) => {
     try {
         let { name, email, password } = req.body;
         if (!name || !email || !password) {
@@ -43,7 +43,21 @@ router.post("/register", async (req, res) => {
         password = await bcrypt.hash(password, 10);
         user = new User({ name, email, password });
         await user.save();
-        res.status(200).send({ msg: "Logged in successfully" });
+        passport.authenticate("local", (err, user, info) => {
+            if (err) {
+                return res.status(422).send({ error: info });
+            }
+            if (!user) {
+                res.status(401).send({ error: info });
+            } else {
+                req.logIn(user, (error) => {
+                    if (error) {
+                        return res.status(422).send({ error: "Some error occured" });
+                    }
+                    res.status(200).send({ user: user, msg: info });
+                });
+            }
+        })(req, res, next);
     } catch (err) {
         res.status(500).send({ error: "Some error occured" });
     }

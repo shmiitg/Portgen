@@ -1,5 +1,6 @@
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
 const LocalStrategy = require("passport-local").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const GitHubStrategy = require("passport-github2").Strategy;
@@ -45,10 +46,12 @@ module.exports = function (passport) {
                         if (user) {
                             return done(null, user, "Logged in successfully");
                         }
+                        const random = crypto.randomBytes(16).toString("hex");
+                        const hashedPassword = await bcrypt.hash(random, 10);
                         user = new User({
                             name: profile.displayName,
                             email: profile.emails[0].value,
-                            password: "randompassword",
+                            password: hashedPassword,
                         });
                         await user.save();
                         done(null, user, "Logged in successfully");
@@ -70,14 +73,16 @@ module.exports = function (passport) {
             function (accessToken, refreshToken, profile, done) {
                 process.nextTick(async function () {
                     try {
-                        let user = await User.findOne({ email: profile.username });
+                        let user = await User.findOne({ email: `${profile.username}@github.com` });
                         if (user) {
                             return done(null, user, "Logged in successfully");
                         }
+                        const random = crypto.randomBytes(16).toString("hex");
+                        const hashedPassword = await bcrypt.hash(random, 10);
                         user = new User({
                             name: profile.displayName,
                             email: profile.username,
-                            password: "randompassword",
+                            password: hashedPassword,
                         });
                         await user.save();
                         done(null, user, "Logged in successfully");
