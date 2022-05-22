@@ -10,13 +10,13 @@ import "./Portfolio.css";
 
 const Portfolio = () => {
     let location = useLocation();
-    location = location.pathname.split("/")[4];
+    location = location.pathname.split("/")[3];
     const [education, setEducation] = useState([]);
     const [experience, setExperience] = useState([]);
     const [project, setProject] = useState([]);
 
     const fetchData = async () => {
-        const res = await fetch(`/api/portfolio/developer/preview/${location}`);
+        const res = await fetch(`/api/portfolio/preview/${location}`);
         const data = await res.json();
         if (res.status === 200) {
             if (data.education) setEducation(data.education);
@@ -45,7 +45,7 @@ const Portfolio = () => {
                 <Project project={project} />
             </div>
             <div className="btn-container">
-                <Link to={`/portfolio/developer/${location}`}>Edit Details</Link>
+                <Link to={`/portfolio/${location}`}>Edit Details</Link>
             </div>
             <div className="btn-download" onClick={exportPdf}>
                 Download

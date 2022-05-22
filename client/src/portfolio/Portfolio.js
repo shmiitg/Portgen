@@ -1,33 +1,41 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import classes from "./Portfolio.module.css";
-import PortfolioCard from "./PortfolioCard";
+import personal from "../images/personal.svg";
+import education from "../images/education.svg";
+import project from "../images/project.svg";
+import experience from "../images/experience.svg";
 
 const Portfolio = () => {
-    const cards = [
-        {
-            type: "Developer",
-            content: "Showcase your development skills and projects",
-            link: "/portfolio/developer",
-        },
-        {
-            type: "Designer",
-            content: "Showcase your desigining skills and projects",
-            link: "/portfolio/developer",
-        },
-    ];
+    let location = useLocation();
+    location = location.pathname.split("/")[2];
+
     return (
         <div className={classes["portfolio-container"]}>
-            <h1>Choose your portfolio</h1>
+            <h1>Fill these details</h1>
             <div className={classes["container"]}>
-                {cards.map((card, index) => (
-                    <PortfolioCard
-                        key={index}
-                        index={index + 1}
-                        type={card.type}
-                        content={card.content}
-                        link={card.link}
-                    />
-                ))}
+                <div className={classes["details"]}>
+                    <img src={personal} alt="personal" />
+                    <h3>Personal</h3>
+                </div>
+                <div className={classes["details"]}>
+                    <Link to={`/portfolio/education/${location}`}>
+                        <img src={education} alt="education" />
+                        <h3>Education</h3>
+                    </Link>
+                </div>
+                <div className={classes["details"]}>
+                    <Link to={`/portfolio/project/${location}`}>
+                        <img src={project} alt="project" />
+                        <h3>Projects</h3>
+                    </Link>
+                </div>
+                <div className={classes["details"]}>
+                    <Link to={`/portfolio/experience/${location}`}>
+                        <img src={experience} alt="work" />
+                        <h3>Work Experience</h3>
+                    </Link>
+                </div>
             </div>
         </div>
     );

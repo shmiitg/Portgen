@@ -8,13 +8,13 @@ import empty from "../images/empty.svg";
 const Dashboard = () => {
     const [loading, setLoading] = useState(1);
     const [ids, setIds] = useState([]);
-    const [types, setTypes] = useState([]);
+    const [dates, setDates] = useState([]);
     const fetchUserInfo = async () => {
         const res = await fetch("/api/user/info");
         const data = await res.json();
         if (res.status === 200) {
             setIds(data.ids);
-            setTypes(data.types);
+            setDates(data.dates);
         } else {
             window.alert(data.error);
         }
@@ -31,7 +31,7 @@ const Dashboard = () => {
                 <div className="dashboard__portfolios">
                     <h3>Your Portfolios</h3>
                     <hr />
-                    <Table ids={ids} types={types} />
+                    <Table ids={ids} dates={dates} />
                 </div>
             ) : (
                 <div className="dashboard__empty">

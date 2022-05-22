@@ -31,13 +31,13 @@ const authRouter = require("./routes/auth");
 const googleAuthRouter = require("./routes/google-auth");
 const githubAuthRouter = require("./routes/github-auth");
 const userRouter = require("./routes/user");
-const developerRouter = require("./routes/developer");
+const portfolioRouter = require("./routes/portfolio");
 
 app.use("/api", authRouter);
 app.use("/auth", googleAuthRouter);
 app.use("/auth", githubAuthRouter);
 app.use("/api/user", userRouter);
-app.use("/api/portfolio/developer/", developerRouter);
+app.use("/api/portfolio", portfolioRouter);
 
 const port = process.env.PORT || 5000;
 

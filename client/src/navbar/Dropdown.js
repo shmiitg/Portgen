@@ -23,15 +23,15 @@ const Dropdown = () => {
 
     return (
         <>
-            <div class="dots" onClick={dotsToggle}>
+            <div className="dots" onClick={dotsToggle}>
                 <div className="user__avatar">
                     <FaUserCircle />
                 </div>
-                <div class="shadow cut"></div>
-                <div class="dropdown__container cut">
-                    <div class="drop"></div>
+                <div className="shadow cut"></div>
+                <div className="dropdown__container cut">
+                    <div className="drop"></div>
                 </div>
-                <div class="list">
+                <div className="list">
                     <ul>
                         <li>
                             <Link to="/dashboard">Dashboard</Link>

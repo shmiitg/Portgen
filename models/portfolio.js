@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const developerSchema = new mongoose.Schema(
+const portfolioSchema = new mongoose.Schema(
     {
         userId: {
             type: mongoose.Schema.Types.ObjectId,
@@ -29,5 +29,5 @@ const developerSchema = new mongoose.Schema(
     }
 );
 
-const Developer = mongoose.model("Developer", developerSchema);
-module.exports = Developer;
+const Portfolio = mongoose.model("Portfolio", portfolioSchema);
+module.exports = Portfolio;

@@ -8,10 +8,12 @@ import { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Portfolio from "./portfolio/Portfolio";
-// Devloper
-import Developer from "./templates/developer/Developer";
-import DeveloperPortfolio from "./preview/developer/Portfolio";
+import Education from "./template/Education";
+import Project from "./template/Project";
+import Experience from "./template/Experience";
+import PortfolioPreview from "./preview/Portfolio";
 import Error from "./error/Error";
+import "./template/Template.css";
 
 function App() {
     const { userName, setUserName } = useContext(UserContext);
@@ -34,7 +36,7 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <Navbar name={userName} />
+                <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={userName ? <Navigate to="/" /> : <Login />} />
@@ -43,16 +45,24 @@ function App() {
                         element={userName ? <Navigate to="/" /> : <Register />}
                     />
                     <Route
-                        path="/portfolio"
+                        path="/portfolio/:slug"
                         element={userName ? <Portfolio /> : <Navigate to="/" />}
                     />
                     <Route
-                        path="/portfolio/developer/:slug"
-                        element={userName ? <Developer /> : <Navigate to="/" />}
+                        path="/portfolio/education/:slug"
+                        element={userName ? <Education /> : <Navigate to="/" />}
                     />
                     <Route
-                        path="/portfolio/developer/preview/:slug"
-                        element={userName ? <DeveloperPortfolio /> : <Navigate to="/" />}
+                        path="/portfolio/project/:slug"
+                        element={userName ? <Project /> : <Navigate to="/" />}
+                    />
+                    <Route
+                        path="/portfolio/experience/:slug"
+                        element={userName ? <Experience /> : <Navigate to="/" />}
+                    />
+                    <Route
+                        path="/portfolio/preview/:slug"
+                        element={userName ? <PortfolioPreview /> : <Navigate to="/" />}
                     />
                     <Route
                         path="/dashboard"
