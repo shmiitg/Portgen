@@ -1,0 +1,17 @@
+.error__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.error__img {
+    margin-bottom: 6rem;
+    width: min(40rem, max(36vw, 28rem));
+}
+
+.error__img img {
+    width: 100%;
+}

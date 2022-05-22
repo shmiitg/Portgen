@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Education from "./Education";
 import Experience from "./Experience";
 import Project from "./Project";
-import { Link, useLocation } from "react-router-dom";
 import pdfMake from "pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import htmlToPdfmake from "html-to-pdfmake";
 import "./Portfolio.css";
 
 const Portfolio = () => {
+    const navigate = useNavigate();
     let location = useLocation();
     location = location.pathname.split("/")[3];
     const [education, setEducation] = useState([]);
@@ -23,7 +24,7 @@ const Portfolio = () => {
             if (data.experience) setExperience(data.experience);
             if (data.project) setProject(data.project);
         } else {
-            window.alert(data.error);
+            navigate("/");
         }
     };
     const exportPdf = () => {

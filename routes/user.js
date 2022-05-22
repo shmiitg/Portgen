@@ -34,7 +34,6 @@ router.get("/portfolio", async (req, res) => {
         await portfolio.save();
         res.status(200).json({ random: random });
     } catch (err) {
-        console.log(err);
         res.status(500).json({ error: "Some error occured" });
     }
 });

@@ -30,7 +30,7 @@
     color: #8e8e8e;
 }
 
-.home-left .text-btn {
+.text-btn {
     border: none;
     background: var(--clr-primary);
     color: #fff;

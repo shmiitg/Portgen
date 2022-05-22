@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import classes from "./Portfolio.module.css";
 import personal from "../images/personal.svg";
 import education from "../images/education.svg";
@@ -7,8 +7,20 @@ import project from "../images/project.svg";
 import experience from "../images/experience.svg";
 
 const Portfolio = () => {
+    const navigate = useNavigate();
     let location = useLocation();
     location = location.pathname.split("/")[2];
+
+    const checkId = async () => {
+        const res = await fetch(`/api/portfolio/${location}`);
+        if (res.status !== 200) {
+            navigate("/");
+        }
+    };
+
+    useEffect(() => {
+        checkId();
+    }, []);
 
     return (
         <div className={classes["portfolio-container"]}>
