@@ -11,6 +11,10 @@ const portfolioSchema = new mongoose.Schema(
             type: String,
             unique: true,
         },
+        personal: {
+            type: Object,
+            default: null,
+        },
         education: {
             type: Array,
             default: null,
