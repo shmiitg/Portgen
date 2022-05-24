@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Table from "./Table";
 import "./Dashboard.css";
 import Loader from "./Loader";
@@ -20,6 +20,17 @@ const Dashboard = () => {
         }
         setLoading(0);
     };
+    const navigate = useNavigate();
+    const generateRandom = async () => {
+        const res = await fetch(`/api/user/portfolio`);
+        const data = await res.json();
+        console.log(data);
+        if (res.status === 200) {
+            navigate(`/portfolio/${data.random}`);
+        } else {
+            window.alert(data.error);
+        }
+    };
     useEffect(() => {
         fetchUserInfo();
     }, []);
@@ -37,7 +48,7 @@ const Dashboard = () => {
                 <div className="dashboard__empty">
                     <img src={empty} alt="empty" />
                     <h3>No portfolios</h3>
-                    <Link to="/portfolio">Start Creating</Link>
+                    <button onClick={generateRandom}>Start Creating</button>
                 </div>
             )}
         </div>

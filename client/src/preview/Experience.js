@@ -1,9 +1,11 @@
 import React from "react";
 
-const Experience = ({ experience }) => {
+const Experience = ({ experience, titleStyle }) => {
     return (
         <div className="experience-container">
-            <div className="title">Work and Experience</div>
+            <div style={titleStyle} className="preview__title">
+                Work and Experience
+            </div>
             {experience.map((exp, index) => (
                 <div key={index} className="experience-details-container">
                     <div className="company">{exp.company}</div>

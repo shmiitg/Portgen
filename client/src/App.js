@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Portfolio from "./portfolio/Portfolio";
+import Personal from "./template/Personal";
 import Education from "./template/Education";
 import Project from "./template/Project";
 import Experience from "./template/Experience";
@@ -47,6 +48,10 @@ function App() {
                     <Route
                         path="/portfolio/:slug"
                         element={userName ? <Portfolio /> : <Navigate to="/" />}
+                    />
+                    <Route
+                        path="/portfolio/personal/:slug"
+                        element={userName ? <Personal /> : <Navigate to="/" />}
                     />
                     <Route
                         path="/portfolio/education/:slug"

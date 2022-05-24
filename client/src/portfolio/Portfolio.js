@@ -27,8 +27,10 @@ const Portfolio = () => {
             <h1>Fill these details</h1>
             <div className={classes["container"]}>
                 <div className={classes["details"]}>
-                    <img src={personal} alt="personal" />
-                    <h3>Personal</h3>
+                    <Link to={`/portfolio/personal/${location}`}>
+                        <img src={personal} alt="personal" />
+                        <h3>Personal</h3>
+                    </Link>
                 </div>
                 <div className={classes["details"]}>
                     <Link to={`/portfolio/education/${location}`}>

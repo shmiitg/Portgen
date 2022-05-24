@@ -1,9 +1,11 @@
 import React from "react";
 
-const Education = ({ education }) => {
+const Education = ({ education, titleStyle }) => {
     return (
         <div className="education-container">
-            <div className="title">Education</div>
+            <div style={titleStyle} className="preview__title">
+                Education
+            </div>
             {education.map((edu, index) => (
                 <div key={index} className="education-details-container">
                     <div className="university">{edu.university}</div>

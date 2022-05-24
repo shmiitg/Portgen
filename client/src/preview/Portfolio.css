@@ -1,12 +1,27 @@
-.preview-container {
+.preview__container {
     max-width: 120rem;
     margin: 0 auto;
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    padding: 0 2rem;
 }
 
-.portfolio {
+/* .portfolio__preview {
+    padding: 0 2rem;
     background: #fff;
+} */
+
+.portfolio__preview__fields {
+    margin: 2rem 0;
 }
+
+.porfolio__preview__btn__container {
+    display: flex;
+}
+
+/* .preview__title {
+    font-size: 1.75rem;
+    font-weight: 500;
+} */

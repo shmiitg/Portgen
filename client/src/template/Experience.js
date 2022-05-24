@@ -96,7 +96,7 @@ const Experience = () => {
                 </div>
             </div>
             <div className="template__links">
-                <button onClick={handleSubmit}>Submit</button>
+                <button onClick={handleSubmit}>Save</button>
                 <Link to={`/portfolio/preview/${location}`}>Preview</Link>
             </div>
         </div>

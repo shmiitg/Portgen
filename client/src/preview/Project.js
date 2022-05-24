@@ -1,9 +1,9 @@
 import React from "react";
 
-const Project = ({ project }) => {
+const Project = ({ project, titleStyle }) => {
     return (
         <div className="project-container">
-            <div className="title">Projects</div>
+            <div style={titleStyle}>Projects</div>
             {project.map((pro, index) => (
                 <div key={index} className="project-details-container">
                     <div className="title">{pro.title}</div>

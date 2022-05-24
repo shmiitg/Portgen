@@ -40,13 +40,14 @@ hr {
     font-size: 2.25rem;
 }
 
-.dashboard__empty a {
+.dashboard__empty button {
     background: var(--clr-primary);
     color: #fff;
     font-size: 1.35rem;
     letter-spacing: 1px;
     border-radius: 12px;
     padding: 15px 32px;
+    padding-top: 17px;
     font-weight: 600;
     text-transform: uppercase;
     transition: all 0.1s ease;
@@ -54,9 +55,10 @@ hr {
     margin-top: 3rem;
     width: fit-content;
     box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.1), 2px 2px 2px #1900b4;
+    border: none;
 }
 
-.dashboard__empty a:hover {
+.dashboard__empty button:hover {
     color: var(--clr-primary);
     background: #f8f8f8;
     transition: 0.2s;
